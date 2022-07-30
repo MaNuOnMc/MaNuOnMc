@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] }); //<-- RICORDARSI QUESTO
 
-client.login("MTAwMjg0OTUwNjMwMTMxMzA4NQ.GgdVUQ.MMfzNWkAkKVr2QQncbz2v_7rLS2BKdShTxxSO8");
+client.login("BOT_TOKEN");
 
 client.on("ready", () => {
     console.log("ONLINE")
@@ -22,7 +22,7 @@ client.on("messageReactionAdd", async function (messageReaction, user) {
     if (messageReaction.message.partial) await messageReaction.message.fetch();
 
     if (messageReaction._emoji.name == "📩") { //Personalizzare l'emoji della reaction
-        if (messageReaction.message.channel.id == "1002852468121673779") { //Settare canale
+        if (messageReaction.message.channel.id == "SETTARE L'id DEL CANALE") { //Settare canale
             messageReaction.users.remove(user);
             var server = messageReaction.message.channel.guild;
             if (server.channels.cache.find(canale => canale.topic == `User ID: ${user.id}`)) {
